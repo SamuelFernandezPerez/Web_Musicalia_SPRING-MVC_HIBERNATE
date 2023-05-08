@@ -1,0 +1,106 @@
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+  <style type="text/css">
+  @keyframes carouselAnim {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(calc(-100% + (6*300px)));
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container .carousel-items {
+    animation: carouselAnim 60s infinite alternate linear;
+  }
+  @keyframes carouselAnim {
+    from {
+      transform: translate(0, 0);
+    }
+    to {
+      transform: translate(calc(-100% + (5*300px)));
+    }
+  }
+}
+
+.carousel-focus:hover {
+  transition: all 0.8s;
+  transform: scale(1.1);
+}</style>
+
+  <div class=" mx-[11.5rem] sliderAx h-80 mt-10">
+      <div id="slider-1" class="container mx-auto">
+        <div class="rounded-lg bg-cover bg-center  h-80 text-white py-24 px-10 object-fill" style="background-image: url(https://rockntipo.com/upload/stowlcarousel/black-is-beltza.jpg)">
+       
+    </div> <!-- container -->
+      <br>
+      </div>
+
+      <div id="slider-2" class="container mx-auto">
+        <div class="bg-cover bg-top  h-80 text-white py-24 px-10 object-fill" style="background-image: url(https://rockntipo.com/upload/stowlcarousel/asfalto.jpg)">
+    </div> <!-- container -->
+      <br>
+      </div>
+     
+    </div>
+     <br>
+ <div  class="flex justify-between w-12 mx-auto pb-2">
+        <button id="sButton1" onclick="sliderButton1()" class="bg-[#0f172a] rounded-full w-4 pb-2 " ></button>
+    <button id="sButton2" onclick="sliderButton2() " class="bg-[#0f172a] rounded-full w-4 p-2"></button>
+  </div>
+
+    <h1 class="mx-[11.5rem] rounded-lg bg-[#0f172a] p-6 my-10 text-white text-3xl lg:text-4xl text-center" style="font-family: 'Dancing Script', cursive, sans-serif;">
+        CD consigliati
+    </h1>
+
+    <div class="rounded-lg container mx-auto w-full overflow-hidden relative">
+        <div class="w-full h-full absolute">
+            <div class="w-1/4 h-full absolute z-50 left-0" style="background: linear-gradient(to right, #0f172a 0%, rgba(255, 255, 255, 0) 100%);"></div>
+            <div class="w-1/4 h-full absolute z-50 right-0" style="background: linear-gradient(to left, #0f172a 0%, rgba(255, 255, 255, 0) 100%);"></div>
+        </div>
+
+		<div class="carousel-items flex items-center justify-center"
+			id="contenedor_inicio"
+			style="width: fit-content; animation: carouselAnim 10s infinite alternate linear;">
+
+		</div>
+
+	</div>
+  <script>
+    var cont=0;
+
+
+function sliderButton1(){
+
+    $("#slider-2").fadeOut(400);
+    $("#slider-1").delay(400).fadeIn(400);
+    $("#sButton2").removeClass("bg-purple-800");
+    $("#sButton1").addClass("bg-purple-800");
+    reinitLoop(4000);
+    cont=0
+    
+    }
+    
+    function sliderButton2(){
+    $("#slider-1").fadeOut(400);
+    $("#slider-2").delay(400).fadeIn(400);
+    $("#sButton1").removeClass("bg-purple-800");
+    $("#sButton2").addClass("bg-purple-800");
+    reinitLoop(4000);
+    cont=1
+    
+    }
+
+    $(window).ready(function(){
+        $("#slider-2").hide();
+        $("#sButton1").addClass("bg-purple-800");
+        
+
+        loopSlider();
+    
+    });
+
+  
+  </script>

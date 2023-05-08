@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+<head>
+<meta charset="ISO-8859-1">
+<title>Musicalia</title>
+</head>
+<body>
+
+<br>
+ <h1 class="mt-28 w-[50rem] m-auto rounded-lg bg-[#0f172a] p-3 my-10 text-white text-3xl lg:text-4xl text-center" style="font-family: 'Dancing Script', cursive, sans-serif;">
+        Riassunto dell'ordine:
+    </h1>
+<br>
+	
+<div class="w-full">
+	<table class="min-w-max w-[50rem] m-auto table-auto shadow-xl">
+  		<thead>
+   			 <tr class="bg-[#0f766e] text-white uppercase text-sm leading-normal">
+   			 	<th class="text-lg py-3 px-6 text-center">Pagina iniziale</th>
+     			<th class="text-lg py-3 px-6 text-center">Titolo</th>
+      			<th class="text-lg py-3 px-6 text-center">Quantità</th>
+     	 		<th class="text-lg py-3 px-6 text-center">Prezzo/unità</th>
+    		</tr>
+  		</thead>
+  		<tbody class="text-[#0f172a] text-sm font-light">
+  	{{#cds}}
+   	 		<tr class="border-b border-[#0f766e] hover:bg-gray-200 bg-white">
+   	 			<td class=" px-6 text-center whitespace-nowrap"><img class="h-28 w-28 mt-10 mb-3 rounded-full shadow-lg" src="subidas/{{cd_id}}.jpg"/></td>
+   	 			<td class="text-lg py-3 px-6 text-center whitespace-nowrap">{{titulo}}</td>
+      			<td class=" text-lg py-3 px-6 text-center whitespace-nowrap">{{precio}}</td>
+      			<td id-producto="{{cd_id}}" class="text-lg py-3 px-6 text-center whitespace-nowrap">{{cantidad}}</td>
+    		</tr>
+    {{/cds}}	
+  		</tbody>
+	</table>	
+</div>
+<br>
+ <h1 class=" w-[50rem] m-auto rounded-lg bg-[#0f172a] p-3 my-10 text-white text-3xl lg:text-4xl text-center" style="font-family: 'Dancing Script', cursive, sans-serif;">
+        dettagli di spedizione:
+    </h1>
+<br>
+<div class="w-full">
+	<table class="min-w-max w-[50rem] m-auto table-auto shadow-xl">
+  		<thead>
+   			 <tr class="bg-[#0f766e] text-white uppercase text-sm leading-normal">
+   			 	<th class="text-lg py-3 px-6 text-center">Nome e cognome:</th>
+    		</tr>
+  		</thead>
+  		<tbody class="text-[#0f172a] text-sm font-light">
+
+   	 		<tr class="border-b border-[#0f766e] hover:bg-gray-200 bg-white">
+      			<td class=" text-lg py-3 px-6 text-center whitespace-nowrap">{{nombreCompleto}}</td>
+   			</tr>	
+  		</tbody>
+	</table>
+		<table class="min-w-max w-[50rem] m-auto table-auto shadow-xl">
+  		<thead>
+   			 <tr class="bg-[#0f766e] text-white uppercase text-sm leading-normal">
+   			 	<th class="text-lg py-3 px-6 text-center">Indirizzo:</th>
+    		</tr>
+  		</thead>
+  		<tbody class="text-[#0f172a] text-sm font-light">
+
+   	 		<tr class="border-b border-[#0f766e] hover:bg-gray-200 bg-white">
+      			<td class=" text-lg py-3 px-6 text-center whitespace-nowrap">{{direccion}}</td>
+   			</tr>	
+  		</tbody>
+	</table>
+		<table class="min-w-max w-[50rem] m-auto table-auto shadow-xl">
+  		<thead>
+   			 <tr class="bg-[#0f766e] text-white uppercase text-sm leading-normal">
+   			 	<th class="text-lg py-3 px-6 text-center">Provincia</th>
+    		</tr>
+  		</thead>
+  		<tbody class="text-[#0f172a] text-sm font-light">
+
+   	 		<tr class="border-b border-[#0f766e] hover:bg-gray-200 bg-white">
+      			<td class=" text-lg py-3 px-6 text-center whitespace-nowrap">{{provincia}}</td>
+   			</tr>	
+  		</tbody>
+	</table>
+		<table class="min-w-max w-[50rem] m-auto table-auto shadow-xl">
+  		<thead>
+   			 <tr class="bg-[#0f766e] text-white uppercase text-sm leading-normal">
+   			 	<th class="text-lg py-3 px-6 text-center">Telefono</th>
+    		</tr>
+  		</thead>
+  		<tbody class="text-[#0f172a] text-sm font-light">
+
+   	 		<tr class="border-b border-[#0f766e] hover:bg-gray-200 bg-white">
+      			<td class=" text-lg py-3 px-6 text-center whitespace-nowrap">{{telefono}}</td>
+   			</tr>	
+  		</tbody>
+	</table>
+		<table class="min-w-max w-[50rem] m-auto table-auto shadow-xl">
+  		<thead>
+   			 <tr class="bg-[#0f766e] text-white uppercase text-sm leading-normal">
+   			 	<th class="text-lg py-3 px-6 text-center">CP</th>
+    		</tr>
+  		</thead>
+  		<tbody class="text-[#0f172a] text-sm font-light">
+
+   	 		<tr class="border-b border-[#0f766e] hover:bg-gray-200 bg-white">
+      			<td class=" text-lg py-3 px-6 text-center whitespace-nowrap">{{cp}}</td>
+   			</tr>	
+  		</tbody>
+	</table>
+</div>
+<br>
+ <h1 class=" w-[50rem] m-auto rounded-lg bg-[#0f172a] p-3 my-10 text-white text-3xl lg:text-4xl text-center" style="font-family: 'Dancing Script', cursive, sans-serif;">
+        Dettagli di pagamento:
+    </h1>
+<br>
+<div class="w-full">
+	<table class="min-w-max w-[50rem] m-auto table-auto shadow-xl">
+  		<thead>
+   			 <tr class="bg-[#0f766e] text-white uppercase text-sm leading-normal">
+   			 	<th class="text-lg py-3 px-6 text-center">Titolare della carta:</th>
+    		</tr>
+  		</thead>
+  		<tbody class="text-[#0f172a] text-sm font-light">
+
+   	 		<tr class="border-b border-[#0f766e] hover:bg-gray-200 bg-white">
+      			<td class=" text-lg py-3 px-6 text-center whitespace-nowrap">{{titularTarjeta}}</td>
+   			</tr>	
+  		</tbody>
+	</table>
+		<table class="min-w-max w-[50rem] m-auto table-auto shadow-xl">
+  		<thead>
+   			 <tr class="bg-[#0f766e] text-white uppercase text-sm leading-normal">
+   			 	<th class="text-lg py-3 px-6 text-center">Numero di carta:</th>
+    		</tr>
+  		</thead>
+  		<tbody class="text-[#0f172a] text-sm font-light">
+
+   	 		<tr class="border-b border-[#0f766e] hover:bg-gray-200 bg-white">
+      			<td class=" text-lg py-3 px-6 text-center whitespace-nowrap">{{numeroTarjeta}}</td>
+   			</tr>	
+  		</tbody>
+	</table>		
+</div>
+<br>
+ <h1 class=" w-[50rem] m-auto rounded-lg bg-[#0f172a] p-3 my-10 text-white text-3xl lg:text-4xl text-center" style="font-family: 'Dancing Script', cursive, sans-serif;">
+        RICORDA:
+    </h1>
+<br>
+<div class="w-full">
+	<table class="min-w-max w-[50rem] m-auto table-auto shadow-xl">
+  		<thead>
+   			 <tr class="bg-[#0f766e] text-white uppercase text-sm leading-normal">
+   			 	<th class="text-lg py-3 px-6 text-center">Ricorda</th>
+    		</tr>
+  		</thead>
+  		<tbody class="text-[#0f172a] text-sm font-light">
+
+   	 		<tr class="border-b border-[#0f766e] hover:bg-gray-200 bg-white">
+      			<td class=" text-lg py-3 px-6 text-center whitespace-nowrap">{{observaciones}}</td>
+   			</tr>	
+  		</tbody>
+	</table>		
+</div>
+<div class=" flex justify-center	">
+	<button class="mt-10 inline-flex items-center px-4 py-2 text-2xl  font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-[#134e4a] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-[#0f766e] dark:hover:bg-[#134e4a] dark:focus:[#134e4a]" id="boton_confirmar_pedido">CONFERMA ORDINE</button>
+</div>
+</body>
+</html>
